@@ -3,21 +3,21 @@ from src.models.settings.connection import db_connection_handler
 from src.models.entities.events import Events
 from sqlalchemy.exc import IntegrityError, NoResultFound
 class EventsRepository:
-  def insert_event(self, eventsInfo: Dict) -> Dict:
+  def insert_event(self, events_info: Dict) -> Dict:
     with db_connection_handler as database:
       try:
         event = Events(
-          id=eventsInfo.get("uuid"),
-          title=eventsInfo.get("title"),
-          details=eventsInfo.get("details"),
-          slug=eventsInfo.get("slug"),
-          maximum_attendees=eventsInfo.get("maximum_attendees"),
+          id=events_info.get("uuid"),
+          title=events_info.get("title"),
+          details=events_info.get("details"),
+          slug=events_info.get("slug"),
+          maximum_attendees=events_info.get("maximum_attendees"),
         )
 
         database.session.add(event)
         database.session.commit()
 
-        return eventsInfo
+        return events_info
 
       except IntegrityError:
         raise Exception('Evento ja cadastrado!')
