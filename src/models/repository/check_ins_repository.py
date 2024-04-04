@@ -9,7 +9,7 @@ class CheckInsRepository:
         check_in = (
           CheckIns(attendeeId=attendee_id)
         )
-        database.session.add(attendee_id)
+        database.session.add(check_in)
         database.session.commit()
 
         return attendee_id
