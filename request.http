@@ -26,3 +26,7 @@ Content-Type: application/json
 ###
 # @name find_attendee_badge
 GET http://localhost:3131/attendees/9ac7ad03-16e8-4ffc-8e46-98f77a0d1cc3/badge
+
+###
+# @name find_attendees_by_event
+GET http://localhost:3131/events/daef993b-4fff-4b79-a658-9127e30e37fc/attendees
