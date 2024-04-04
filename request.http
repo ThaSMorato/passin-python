@@ -1,9 +1,28 @@
+# @name create_event
 POST http://localhost:3131/events
 Content-Type: application/json
 
 {
   "title": 123,
   "details": null,
-  "maximumAttendees": 1,
-  "slug": "1-2-3"
+  "maximum_attendees": 20,
+  "slug": "202020"
 }
+
+###
+# @name get_event_by_id
+GET http://localhost:3131/events/daef993b-4fff-4b79-a658-9127e30e37fc
+
+###
+# @name create_attendee
+POST http://localhost:3131/events/daef993b-4fff-4b79-a658-9127e30e37fc/register
+Content-Type: application/json
+
+{
+  "email": "tha@gmail.com",
+  "name": "Thales"
+}
+
+###
+# @name find_attendee_badge
+GET http://localhost:3131/attendees/9ac7ad03-16e8-4ffc-8e46-98f77a0d1cc3/badge
